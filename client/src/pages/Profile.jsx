@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react'
 
 import { DisplayCampaigns } from '../components';
-// import { useStateContext } from '../context'
+import { useStateContext } from '../context'
 
 const Profile = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [campaigns, setCampaigns] = useState([]);
 
-//   const { address, contract, getUserCampaigns } = useStateContext();
-  const address = ""
-  const contract = ""
-  const getUserCampaigns = () => {}
+  const { address, contract, getUserCampaigns } = useStateContext();
 
   const fetchCampaigns = async () => {
     setIsLoading(true);

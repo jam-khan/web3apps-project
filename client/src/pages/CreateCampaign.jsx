@@ -28,9 +28,9 @@ const CreateCampaign = () => {
     e.preventDefault();
 
     checkIfImage(form.image, async (exists) => {
-      if(exists) {    // image exists
+      if(exists) {
         setIsLoading(true)
-        await createCampaign({ ...form, target: ethers.utils.parseUnits(form.target, 18)}) // 18 decimals for ETH
+        await createCampaign({ ...form, target: ethers.utils.parseUnits(form.target, 18)})
         setIsLoading(false);
         navigate('/');
       } else {
