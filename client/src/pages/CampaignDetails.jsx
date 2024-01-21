@@ -102,7 +102,7 @@ const CampaignDetails = () => {
 
           <div className="mt-[20px] flex flex-col p-4 bg-[#1c1c24] rounded-[10px]">
             <p className="font-epilogue fount-medium text-[20px] leading-[30px] text-center text-[#808191]">
-              Fund the campaign
+              Crowdfund property
             </p>
             <div className="mt-[30px]">
               <input 
@@ -115,13 +115,13 @@ const CampaignDetails = () => {
               />
 
               <div className="my-[20px] p-4 bg-[#13131a] rounded-[10px]">
-                <h4 className="font-epilogue font-semibold text-[14px] leading-[22px] text-white">Back it because you believe in it.</h4>
-                <p className="mt-[20px] font-epilogue font-normal leading-[22px] text-[#808191]">Support the project for no reward, just because it speaks to you.</p>
+                <h4 className="font-epilogue font-semibold text-[14px] leading-[22px] text-white">Empower your portfolio through strategic property investments</h4>
+                <p className="mt-[20px] font-epilogue font-normal leading-[22px] text-[#808191]">Join our community in shaping the future of real estate, driven by shared belief and collective ambition.</p>
               </div>
 
               <CustomButton 
                 btnType="button"
-                title="Fund Campaign"
+                title="Fund Property"
                 styles="w-full bg-[#8c6dfd]"
                 handleClick={handleDonate}
               />
