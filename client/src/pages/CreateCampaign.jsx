@@ -44,7 +44,7 @@ const CreateCampaign = () => {
     <div className="bg-[#1c1c24] flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4">
       {isLoading && <Loader />}
       <div className="flex justify-center items-center p-[16px] sm:min-w-[380px] bg-[#3a3a43] rounded-[10px]">
-        <h1 className="font-epilogue font-bold sm:text-[25px] text-[18px] leading-[38px] text-white">Start a Campaign</h1>
+        <h1 className="font-epilogue font-bold sm:text-[25px] text-[18px] leading-[38px] text-white">List Property</h1>
       </div>
 
       <form onSubmit={handleSubmit} className="w-full mt-[65px] flex flex-col gap-[30px]">
@@ -57,8 +57,8 @@ const CreateCampaign = () => {
             handleChange={(e) => handleFormFieldChange('name', e)}
           />
           <FormField 
-            labelName="Campaign Title *"
-            placeholder="Write a title"
+            labelName="Property Name *"
+            placeholder="Enter property name"
             inputType="text"
             value={form.title}
             handleChange={(e) => handleFormFieldChange('title', e)}
@@ -66,8 +66,8 @@ const CreateCampaign = () => {
         </div>
 
         <FormField 
-            labelName="Story *"
-            placeholder="Write your story"
+            labelName="Description *"
+            placeholder="Write a description for your property"
             isTextArea
             value={form.description}
             handleChange={(e) => handleFormFieldChange('description', e)}
@@ -96,8 +96,8 @@ const CreateCampaign = () => {
         </div>
 
         <FormField 
-            labelName="Campaign image *"
-            placeholder="Place image URL of your campaign"
+            labelName="Property image *"
+            placeholder="Place image URL of your property"
             inputType="url"
             value={form.image}
             handleChange={(e) => handleFormFieldChange('image', e)}
