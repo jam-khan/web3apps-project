@@ -51,7 +51,7 @@ const CreateCampaign = () => {
         <div className="flex flex-wrap gap-[40px]">
           <FormField 
             labelName="Your Name *"
-            placeholder="John Doe"
+            placeholder="Enter name"
             inputType="text"
             value={form.name}
             handleChange={(e) => handleFormFieldChange('name', e)}
@@ -107,7 +107,7 @@ const CreateCampaign = () => {
             <CustomButton 
               btnType="submit"
               title="Submit new campaign"
-              styles="bg-[#1dc071]"
+              styles="bg-[#2ca8db]"
             />
           </div>
       </form>

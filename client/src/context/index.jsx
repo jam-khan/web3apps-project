@@ -7,35 +7,36 @@ import { EditionMetadataWithOwnerOutputSchema } from '@thirdweb-dev/sdk';
 const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
+  // Smart Contract address from thirdweb
   const { contract } = useContract('0xe069E8483e3d701571e8d4AEFCbD02840c1401e0');
   const { mutateAsync: createCampaign } = useContractWrite(contract, 'createCampaign');
 
   const address = useAddress();
-  const connect = useMetamask();
+  const connect = useMetamask();    //connect with smart wallet
 
   const publishCampaign = async (form) => {
     try {
       const data = await createCampaign({
 				args: [
 					address, // owner
-					form.title, // title
-					form.description, // description
+					form.title,
+					form.description,
 					form.target,
-					new Date(form.deadline).getTime(), // deadline,
+					new Date(form.deadline).getTime(), 
 					form.image,
 				],
 			});
 
-      console.log("contract call success", data)
+      console.log("Contract call success", data)
     } catch (error) {
-      console.log("contract call failure", error)
+      console.log("Contract call failure", error)
     }
   }
 
   const getCampaigns = async () => {
     const campaigns = await contract.call('getCampaigns');
 
-    const parsedCampaings = campaigns.map((campaign, i) => ({
+    const parsedCampaigns = campaigns.map((campaign, i) => ({
       owner: campaign.owner,
       title: campaign.title,
       description: campaign.description,
@@ -46,7 +47,7 @@ export const StateContextProvider = ({ children }) => {
       pId: i
     }));
 
-    return parsedCampaings;
+    return parsedCampaigns;
   }
 
   const getUserCampaigns = async () => {
@@ -86,7 +87,7 @@ export const StateContextProvider = ({ children }) => {
         address,
         contract,
         connect,
-        createCampaign: publishCampaign,
+        createCampaign: publishCampaign,    // rename publishCampaign to createCampaign
         getCampaigns,
         getUserCampaigns,
         donate,
